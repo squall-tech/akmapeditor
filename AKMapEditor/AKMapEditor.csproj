@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C868584E-AACC-4E74-A441-C41AE298C255}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AKMapEditor</RootNamespace>
+    <AssemblyName>AKMapEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ancient-legend-icon-33.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ServerDebug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\ServerDebug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CE456C8F3A4491BD3DF9BDCA7BDA6F5887B400E1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AKMapEditor_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl">
+      <HintPath>..\lib\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\lib\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TabStrip, Version=2.0.4821.3298, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\TabStrip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="FindItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindItemForm.Designer.cs">
+      <DependentUpon>FindItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtMapEditorServer\Classes\Login.cs" />
+    <Compile Include="OtMapEditorServer\Classes\MapRequest.cs" />
+    <Compile Include="OtMapEditorServer\Classes\MapResponse.cs" />
+    <Compile Include="OtMapEditorServer\Classes\MapUpdate.cs" />
+    <Compile Include="OtMapEditorServer\Classes\ServerInformation.cs" />
+    <Compile Include="OtMapEditorServer\ClientConnection.cs" />
+    <Compile Include="OtMapEditorServer\Connection.cs" />
+    <Compile Include="OtMapEditorServer\NetworkMessage.cs" />
+    <Compile Include="ConnectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectForm.Designer.cs">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtMapEditor\Action.cs" />
+    <Compile Include="OtMapEditor\CopyBuffer.cs" />
+    <Compile Include="OtMapEditor\Creature.cs" />
+    <Compile Include="OtMapEditor\Creatures.cs" />
+    <Compile Include="OtMapEditor\DCButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OtMapEditor\Enums.cs" />
+    <Compile Include="OtMapEditor\OtBrush\AutoBorder.cs" />
+    <Compile Include="OtMapEditor\OtBrush\Brush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\Brushes.cs" />
+    <Compile Include="OtMapEditor\OtBrush\BrushType.cs" />
+    <Compile Include="OtMapEditor\EditorPalette.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtMapEditor\EditorPalette.Designer.cs">
+      <DependentUpon>EditorPalette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtMapEditor\MapBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OtMapEditor\MapEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OtMapEditor\Graphics.cs" />
+    <Compile Include="OtMapEditor\MapCanvas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtMapEditor\OtBrush\CarpetBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\CreatureBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\DoodadBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\DoorBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\EraserBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\FlagBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\GroundBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\HouseBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\HouseExitBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\Materials.cs" />
+    <Compile Include="OtMapEditor\OtBrush\OptionalBorderBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\RAWBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\SpawnBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\TableBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\TemplePositionBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\TerrainBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\TileSet.cs" />
+    <Compile Include="OtMapEditor\OtBrush\WallBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\WallDecorationBrush.cs" />
+    <Compile Include="OtMapEditor\OtBrush\WaypointBrush.cs" />
+    <Compile Include="OtMapEditor\Outfit.cs" />
+    <Compile Include="OtMapEditor\PngFiles.cs" />
+    <Compile Include="OtMapEditor\Selection.cs" />
+    <Compile Include="OtMapEditor\Settings.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtMapEditor\BaseMap.cs" />
+    <Compile Include="OtMapEditor\BinaryNode.cs" />
+    <Compile Include="OtMapEditor\ClientVersion.cs" />
+    <Compile Include="OtMapEditor\FileReader.cs" />
+    <Compile Include="OtMapEditor\FileWriter.cs" />
+    <Compile Include="OtMapEditor\Map.cs" />
+    <Compile Include="OtMapEditor\Position.cs" />
+    <Compile Include="OtMapEditor\PropertyReader.cs" />
+    <Compile Include="OtMapEditor\Item.cs" />
+    <Compile Include="OtMapEditor\Items.cs" />
+    <Compile Include="OtMapEditor\PropertyWriter.cs" />
+    <Compile Include="OtMapEditor\Spawn.cs" />
+    <Compile Include="OtMapEditor\Tile.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OtMapEditor\Generic.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerForm.Designer.cs">
+      <DependentUpon>ServerForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FindItemForm.resx">
+      <DependentUpon>FindItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectForm.resx">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtMapEditor\EditorPalette.resx">
+      <DependentUpon>EditorPalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtMapEditor\MapBrowser.resx">
+      <DependentUpon>MapBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtMapEditor\MapCanvas.resx">
+      <DependentUpon>MapCanvas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtMapEditor\MapEditor.resx">
+      <DependentUpon>MapEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerForm.resx">
+      <DependentUpon>ServerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ancient-legend-icon-33.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
